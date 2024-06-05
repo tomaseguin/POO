@@ -1,0 +1,21 @@
+import javax.swing.JOptionPane;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Equipo boca = new Equipo("Boca", "La Boca");
+		Equipo river = new Equipo("River", "Nunez");
+		Equipo.AgregarJugador(river,11);
+		Equipo.AgregarJugador(boca,11);
+		if (boca.getPlantel().size() >= 8 && river.getPlantel().size() >= 8) {
+			
+		} else {
+			JOptionPane.showMessageDialog(null, "No hay jugadores suficientes para jugar el partido.");
+
+		}
+		
+
+	}
+
+}

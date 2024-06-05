@@ -1,0 +1,72 @@
+import java.util.Random;
+
+public class Jugador {
+	private String nombre;
+	private String posicion;
+	private int nroCamiseta;
+	private static int num;
+	private int edad = (int) (Math.random()*19+17);
+	private static String[] posicionAleatoria = {"Defensor", "Mediocampista", "Delantero"};
+	
+	public Jugador(String nombre, String posicion, int edad) {
+		setNum(getNum() + 1);
+		this.nombre = nombre;
+		this.posicion = posicion;
+		this.nroCamiseta = getNum();
+		this.edad = edad;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getPosicion() {
+		return posicion;
+	}
+
+	public void setPosicion(String posicion) {
+		this.posicion = posicion;
+	}
+
+	public int getNroCamiseta() {
+		return nroCamiseta;
+	}
+
+	public void setNroCamiseta(int nroCamiseta) {
+		this.nroCamiseta = nroCamiseta;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+	public static int getNum() {
+		return num;
+	}
+
+	public static void setNum(int num) {
+		Jugador.num = num;
+	}
+
+	@Override
+	public String toString() {
+		return "\nJugador [nombre=" + nombre + ", posicion=" + posicion + ", nroCamiseta=" + nroCamiseta + ", edad="
+				+ edad + "]";
+	}
+	
+	static Random random = new Random();
+	public static String elegirPosAleatoria() {
+		int numAleatorio=random.nextInt(3);
+		return posicionAleatoria[numAleatorio];
+	}
+
+	
+
+}
